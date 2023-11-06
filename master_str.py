@@ -1,3 +1,7 @@
+import string
+from random import choice
+import random
+import re
 print("================================Master str==========================================")
 
 # exo 1
@@ -81,10 +85,10 @@ print("10.- ",espas)
 
 print("================================Master list==========================================")
 # exo 1
-n = int(input("Antre yon nonb: "))
+nax = int(input("Antre yon nonb: "))
 lis = []
 
-for i in range(n + 1):
+for i in range(nax + 1):
     if i % 2 == 0:
         lis.append(i)
 
@@ -104,8 +108,8 @@ print("3.- ",maj)
 print("==================================================================================")
 
 # exo 4
-lis = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-lis_d = [el for index, el in enumerate(lis) if index % 3]
+lis = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+lis_d = [el for el in lis if el % 3 == 0]
 print("4.- ",lis_d)
 print("==================================================================================")
 
@@ -134,3 +138,210 @@ jo = [1,3,5,7,9]
 no = [fa for fa in ji if fa not in ji] + [fa for fa in ji if fa not in jo]
 print("8.- ",no)
 print("==================================================================================")
+
+# exo 9
+
+dik = {'a':'1','b':'2','c':'3'}
+kle = list(dik.keys())
+vale = list(dik.values())
+print("9.- kle yo", kle)
+print("9.- vale yo", vale)
+print("==================================================================================")
+
+# exo 10
+mama = [1,2,3,4,5,6,7]
+momo = [0,2,4,6,8]
+meme = [0,1,2,3,5,7,8,4]
+mimi = list(set(mama)|set(momo)|set(meme))
+print("10.- ", mimi)
+
+print("================================Master diksyone==========================================")
+# # exo 1
+fax = {'a':'1','b':'2','c':'3'}
+fox = list(fax.values())
+print("1.- ",fox)
+print("==================================================================================")
+
+
+# #exo 2
+fex = input("Antre vale w chef: ")
+if fex.startswith("{") and fex.endswith("}"):
+    print("2.- Gen akolad ni devan ni deye")
+else:
+    print("2.- Pa gen akolad ni devan ni deye")
+print("==================================================================================")
+
+
+# # exo 3
+
+
+
+# # exo 4
+pox = {'a':'1','b':'2','c':'3'}
+pix = list(pox.values())
+for po in pix:
+    print("4.- ",po)
+print("==================================================================================")
+
+# # exo 5
+print("==================================================================================")
+tax = {'a':'1','b':'2','c':'3'}
+tox = {}
+for tex, tix in tax.items():
+    tox[tex] = tix
+print("5.- ", tax)
+print("5.- Kopi: ", tox)
+
+ 
+# # exo 6
+print("==================================================================================")
+yax = {'a':'1','b':'2','c':'3'}
+for yix, yox in yax.items():
+    if isinstance(yox, str):
+        yax[yix]  = f"_{yox}_"
+print("6.- ",yax)
+
+# # exo 7
+print("==================================================================================")
+rax = {'a':'1','b':'Joseph','c':'323'}
+rox = {rix:rex for rix, rex in rax.items() if rex.isdigit()}
+print("7.- ", rox)
+
+# #exo 8
+print("==================================================================================")
+bax = {'a':'1','b':'Joseph','c':'323'}
+box = list(bax.items())
+print("8.- ", box)
+
+# # exo 9
+print("==================================================================================")
+vax = [('a','1'),('b','Joseph'),('c','323')]
+vox = dict(vax)
+print("9.- ",vox)
+
+
+
+# # exo 10
+# print("==================================================================================")
+
+print("================================Master fonksyon==========================================")
+
+print("==================================================================================")
+# # exo 1
+print("==================================================================================")
+
+def max(pli):
+    enves = pli[::-1]
+    return enves
+mix = input("Antre mo w: ")
+mex = max(mix)
+print("1.- ", mex)
+
+print("==================================================================================")
+# # exo 2
+
+def kax(n):
+    alphabe=string.ascii_lowercase
+    kox = ''.join(choice(alphabe) for _ in range(n))
+    return kox
+
+random_kox = kax(10)
+print("2.- ",random_kox)
+
+
+# exo 3
+print("==================================================================================")
+def hax (p):
+    hix = string.ascii_lowercase
+    hox = ''.join(random.sample(hix,p))
+    return hox
+hex = hax(10)
+print("3.- ", hex)
+# exo 4
+print("==================================================================================")
+def vax (sa):
+    if sa >20:
+        print("pa bon.")
+    vox = "0123456789abcdefghijklmnopqrstuvwxyz"
+    if sa > len(vox):
+        print("pa bon.")
+    vex = ''.join(random.sample(vox,sa))
+    return vex
+vix = vax(10)
+print("4.- ",vix)
+
+# exo 5
+print("==================================================================================")
+
+
+def gox(se):
+    
+    gax = re.sub(r'[^a-zA-Z0-9-]', '', se)
+    
+    gax = re.sub(r'-+', '-', gax)
+
+    if gax.startswith('-'):
+        gax = gax[1:]
+    if gax.endswith('-'):
+        gax = gax[:-1]
+    return gax
+
+se = input("Antre yon mo: ")
+gax = gox(se)
+print("5.- ", gax)
+
+
+# exo 6
+print("==================================================================================")
+def sax(wox, dex):
+    sex = dex.join(wox)
+    return sex
+wox = "Mwen"
+dex = ","
+sex = sax(wox, dex)
+print("6.- ",sex)
+
+#exo 7
+print("==================================================================================")
+def xox(xex):
+    xix = "abcdefghijklmnopqrstuvwxyz"  
+    xax = '-'.join(str(xix.index(ch) + 1) for ch in xex)
+    return xax
+xex = "mwen"
+xax = xox(xex)
+print("7.-",xax)
+
+# exo 8
+print("==================================================================================")
+def zox(zex):
+    zax = "abcdefghijklmnopqrstuvwxyz"  # Abet la
+    zyx = [zax[int(index) - 1] for index in zex.split('-')]
+    zix = ''.join(zyx)
+    return zix
+zex = "13-23-5-14"
+zix = zox(zex)
+print("8.- ",zix)
+# exo 9
+print("==================================================================================")
+def nox(nax, nax2):
+    return (nax, nax2)
+nex = "Mwen"
+nex2 = "Vle"
+
+nix = nox(nex, nex2)
+print("9.- ",nix)
+
+# exo 10
+print("==================================================================================")
+def yax(yyx):
+    oyx = yyx.split()
+    yix = []
+
+    for xoy in oyx:
+        if xoy != "":
+            yix.append(xoy[0])
+
+    return ''.join(yix)
+yox = input("Antre non ou: ")
+yex = yax(yox)
+print("10.- Inisyal ou se:", yex)
